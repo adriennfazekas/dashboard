@@ -27,12 +27,17 @@ main {
 }
 .top {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin: 1em;
 }
 h1.time {
+    justify-content: flex-start;
     text-align: center;
+    margin-bottom: 4em;
+    font-size: 3rem;
 }
 
+/* CRYPTO */
 .crypto-top, .euro {
     display: flex;
     align-items: center;
@@ -41,9 +46,22 @@ h1.time {
 div.crypto-top, .euro > span {
     font-size: 1.5rem;
 }
-div.crypto-body > p {
+div.crypto-body, div.euro-body > p {
     text-align: center;
 }
 .euro-img {
     height: 45px;
+}
+
+/* WEATHER */
+.weather-flex {
+    display: flex;
+    align-items: center;
+}
+.weather-flex span {
+    font-size: 2.9rem;
+}
+.weather p {
+    text-align: center;
+    margin: 0;
 }
