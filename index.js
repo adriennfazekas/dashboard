@@ -2,7 +2,7 @@
 fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=universe")
     .then(res => res.json())
     .then(data => {  
-        document.body.style.backgroundImage = `url(${data.urls.full})`
+        document.body.style.backgroundImage = `url(${data.urls.regular})`
         document.getElementById("author").innerText = `By: ${data.user.name}`
     })
     .catch(err => {
@@ -33,3 +33,32 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
     })
     .catch(err => {console.error(err)})
 
+fetch("https://v6.exchangerate-api.com/v6/52410926119eedef48530705/latest/EUR")
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+        document.getElementById("euro-huf").innerHTML += `
+            <div class="euro">
+                <img class="euro-img" src="euro.jpg" >
+                <span>1 ${data.base_code}</span>
+            </div>
+            <div class="euro-body"><p>${data.conversion_rates.HUF} Ft</p></div>
+        `
+    })
+
+function render() {
+    const currentTime = new Date()
+    let currentHour = currentTime.getHours()
+    const currentMinute = currentTime.getMinutes()
+    
+    if(currentHour < 12) {
+        return document.getElementById("time").innerHTML = `
+        ${currentHour} : ${currentMinute} AM`
+    } else {
+        currentHour = currentHour % 12
+        return document.getElementById("time").innerHTML = `
+        ${currentHour} : ${currentMinute} PM`
+    }
+}
+render()
+    

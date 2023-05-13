@@ -27,21 +27,23 @@ main {
 }
 .top {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 h1.time {
     text-align: center;
 }
 
-.crypto-top {
+.crypto-top, .euro {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-div.crypto-top > span {
+div.crypto-top, .euro > span {
     font-size: 1.5rem;
 }
 div.crypto-body > p {
     text-align: center;
-    margin: 0.3em;
+}
+.euro-img {
+    height: 45px;
 }
