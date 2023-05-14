@@ -45,19 +45,10 @@ fetch("https://api.coingecko.com/api/v3/coins/ethereum")
     })*/
 
 function renderTime() {
-    const currentTime = new Date()
-    let currentHour = currentTime.getHours()
-    const currentMinute = currentTime.getMinutes()
     const timeEl = document.getElementById("time")
-    
-    if(currentHour < 12) {
-        return timeEl.innerHTML  = `
-        ${currentHour} : ${currentMinute} AM`
-    } else {
-        currentHour = currentHour % 12
-        return timeEl.innerHTML = `
-        ${currentHour} : ${currentMinute} PM`
-    }
+    let currentTime = new Date()
+    currentTime = currentTime.toLocaleTimeString("en-US", {timeStyle: "short"})
+    timeEl.innerHTML = currentTime
 }
 setInterval(renderTime, 1000)
 
