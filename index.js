@@ -1,5 +1,5 @@
 
-fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=green")
+fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=red")
     .then(res => res.json())
     .then(data => {  
         document.body.style.backgroundImage = data.urls.full
