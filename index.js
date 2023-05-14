@@ -2,7 +2,7 @@
 fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=green")
     .then(res => res.json())
     .then(data => {  
-        document.body.style.backgroundImage = `url(background.jpg)`
+        document.body.style.backgroundImage = data.urls.full
         document.getElementById("author").innerText = `By: ${data.user.name}`
     })
     .catch(err => {
