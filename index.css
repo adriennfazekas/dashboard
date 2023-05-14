@@ -67,3 +67,14 @@ div.crypto-body, div.euro-body > p {
     margin: 0;
     font-size: 1.7rem;
 }
+
+/* GMAIL */
+.gmail {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+}
+
+.gmail:hover {
+    background-color: black;
+}
